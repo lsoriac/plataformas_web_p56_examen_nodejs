@@ -9,32 +9,29 @@ let readCSV = async(path) => {
     } catch (error) {
         throw new Error(`El archivo csv no existe`)
     }
+    //condición de que el CSV efectivamente sea el que se requiere analizar, tomando celdas de datos claves
     if (csvStr.indexOf("IT.NET.USER.ZS") > 0 && csvStr.indexOf("Country") > 0 && csvStr.indexOf("IT.NET.USER.ZS") && csvStr.indexOf("Country") == 94) {
         csvStr = csvStr.substring(csvStr.indexOf("Country") - 1);
         return csv().fromString(csvStr).then((jsonObj) => jsonObj)
     } else {
         throw new Error(`El Archivo no tiene el formato correcto`);
     }
-
-
-
 }
 let getJSON = async(path) => {
     let data = await readCSV(path);
     return data;
 }
 
-
 async function analizar(pais, year, csvpath) {
     let errorCode = 'El parámetro country debe ser un código ISO 3166 ALPHA-3.'
-
+        //mayusculas el codigo del país y validar que sea un código ISO 3166 ALPHA-3 correcto
     try {
         pais = pais.toUpperCase()
         let codeP = lookup.countries({ alpha3: pais })[0];
         if (codeP == undefined) {
             throw new Error(errorCode)
         }
-    } catch (error) { //ISO 3166 ALPHA-3
+    } catch (error) {
         throw new Error(errorCode)
     }
     let msg
@@ -65,9 +62,6 @@ async function buscarPais(pais, year, json) {
     return { name: aux['Country Name'], code: pais, indicador: aux['Indicator Name'], valor: aux[year], anio: year }
 
 }
-
-
-
 module.exports = {
     analizar,
     buscarPais

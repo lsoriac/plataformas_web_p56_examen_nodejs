@@ -2,7 +2,7 @@
 # Universidad Politécnica Salesiana
 
 
-_Crear una Aplicación en NodeJS con vista de consola que permite leer los datos de las Suscripciones a telefonía celular móvil, publicadas por el Banco Mundial y mostrar la búsqueda de un determinado país en un año específico._
+_Crear una Aplicación en NodeJS con vista de consola que permite leer los datos de Personas que usan Internet (% de la población), publicadas por el Banco Mundial y mostrar la búsqueda de un determinado país en un año específico, además de generar un archivo .txt con la información de la búsqueda._
 
 ## Comenzando 🚀
 
@@ -27,23 +27,23 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 3. Datos Banco Mundial
-  - _Descarga de los datos en formato [CSV](https://datos.bancomundial.org/indicador/IT.CEL.SETS)._
+  - _Descarga de los datos en formato [CSV](https://datos.bancomundial.org/indicador/IT.NET.USER.ZS)._
 
 ### Ayuda / Comandos ⚙️ 📦
 * _**-f** *archivo* Path(Ruta) de los datos del Banco Mundial._
 * _**-c** *pais* Código ISO 31 ALPHA-3 de los paises._
 * _**-y** *anio* Año (Desde 1960 - Hasta 2019)._
 ```
-mobile-subs --help
-mobile-subs publicar -f -c -y 
-mobile-subs guardar -f -c -y 
+app.js --help
+app.js mostrar -f -c -y 
+app.js guardar -f -c -y 
 ```
 
 ### Ejemplo 🔩
 
 _La ejecución se lleva a cabo con el siguiente comando **Asegurate** de haber descargado los datos del banco mundial y **también** colocar correctamente el path(ruta)_
 ```
-mobile-subs publicar -c ECU -f './API_IT.CEL.SETS_DS2_es_csv_v2_1072836.csv'
+app.js mostrar -c ECU -f './API_IT.NET.USER.ZS_DS2_es_csv_v2_1121204.csv'
 ```
 
 ## Construido con 🛠️
