@@ -62,7 +62,7 @@ async function buscarPais(pais, year, json) {
             break;
         }
     }
-    return { name: aux['Country Name'], code: pais, indicador: aux['Indicator Name'], uso_internet: aux[year], anio: year }
+    return { name: aux['Country Name'], code: pais, indicador: aux['Indicator Name'], valor: aux[year], anio: year }
 
 }
 

@@ -34,7 +34,7 @@ const guardar = {
     }
 }
 
-const argv = require('yargs').command('mostrar', ' Este comando publicará las estadísticas en una página web básica.', mostrar).command('guardar', ' Este comando almacenará los resultados de las estadísticas en un archivo json.', guardar).argv;
+const argv = require('yargs').command('mostrar', ' Este comando publicará las estadísticas en una página web básica.', mostrar).command('guardar', ' Este comando almacenará los resultados de las estadísticas en un archivo json.', guardar).help().argv;
 
 module.exports = {
     argv

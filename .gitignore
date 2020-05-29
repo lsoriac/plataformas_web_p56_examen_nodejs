@@ -109,4 +109,7 @@ tmp/
 temp/
 
 # End of https://www.gitignore.io/api/node
-modelo/data.csv
+
+*.txt
+
+datos.csv
